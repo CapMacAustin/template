@@ -1,0 +1,315 @@
+
+
+.collection-type-index #content-wrapper {
+  opacity: 0;
+  position: relative;
+}
+body.loaded.collection-type-index #content-wrapper {
+  opacity: 1;
+}
+
+
+.collection-type-index {
+
+  // Heights
+  &.index-image-height-fullscreen .title-desc-wrapper.has-main-image {
+    min-height: 100vh;
+  }
+  &.index-image-height-two-thirds .title-desc-wrapper.has-main-image {
+    min-height: 66.67vh;
+  }
+  &.index-image-height-half .title-desc-wrapper.has-main-image {
+    min-height: 50vh;
+  }
+  &.first-index-image-fullscreen .title-desc-wrapper.has-main-image.first {
+    min-height: 100vh;
+  }
+
+}
+
+#parallax-images {
+  display: none;
+}
+
+.parallax-scrolling {
+  .title-desc-image {
+    display: none;
+  }
+  #parallax-images {
+    display: block;
+  }
+}
+
+#parallax-images {
+  background-color: @contentBgColor;
+  .image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // NOTE: Height is set intentionally in vh, to match .title-desc-wrapper
+    // height. iOS Safari treats height: 100% as the viewable area, but height:
+    // 100vh as the viewable area PLUS the bottom menu bar.
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: @contentBgColor;
+    -webkit-backface-visibility: hidden;
+    img {
+      opacity: 1;
+      &.loading { opacity: 0; }
+    }
+
+    &.has-background-video {
+      overflow-y: hidden;
+    }
+  }
+}
+
+#parallax-images .sqs-video-background,
+#parallax-images .sqs-video-background + .image-overlay-wrapper {
+  display: block;
+}
+
+// --------------------------------------
+
+// Scroll arrow
+
+// --------------------------------------
+
+.color-weight-dark.scroll-arrow {
+  color: #fff;
+}
+
+// --------------------------------------
+
+// Parallax Nav
+
+// --------------------------------------
+
+
+
+#parallax-nav a:hover .nav-title {
+  right: 20px;
+  opacity: 1;
+  z-index: 51;
+  padding-right: 15px;
+  visibility: visible;
+}
+
+#parallax-nav {
+  position: fixed;
+  z-index: 52;
+  top: 50%;
+  right: 15px;
+  padding: 0 10px 0 0;
+  .transition(opacity 0.3s 0s linear);
+  .translate(0, -50%, 0);
+  a {
+    display: block;
+    margin: 0;
+    padding: 10px 0 10px 15px;
+    cursor: pointer;
+    outline: 0;
+    &.active .dot {
+      width: 8px;
+      height: 8px;
+      margin-left: -1px;
+    }
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    display: block;
+    text-decoration: none;
+    .border-radius(50%);
+    .transition(~'background-color 0.1s linear, border-color 0.1s linear');
+  }
+}
+
+.hide-parallax-nav #parallax-nav, .ie8 #parallax-nav, .ie9 #parallax-nav {
+  display: none;
+}
+
+
+.nav-title {
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+  font-size: 13px;
+  text-transform: @nav-font-text-transform;
+  white-space: nowrap;
+  font-family: @nav-font-font-family;
+  letter-spacing: @nav-font-letter-spacing;
+  font-weight: @nav-font-font-weight;
+  font-style: @nav-font-font-style;
+  text-decoration: @nav-font-text-decoration;
+  margin-top: -11px;
+  padding: 0 0 5px 0;
+  .easeOutQuint(all, 0.3s);
+  line-height: 32px;
+  visibility: hidden;
+}
+
+.color-weight-dark#parallax-nav {
+  .dot {
+    background-color: #fff;
+  }
+  .active .dot {
+    background-color: transparent;
+    border: solid 2px #fff;
+  }
+  .nav-title {
+    color: #fff;
+  }
+}
+
+.color-weight-light.scroll-arrow {
+  color: #000;
+}
+
+.color-weight-light#parallax-nav {
+  .dot {
+    background-color: #000;
+  }
+  .active .dot {
+    background-color: transparent;
+    border: solid 2px #000;
+  }
+  .nav-title {
+    color: #000;
+  }
+}
+
+
+
+
+.parallax-item, .parallax-images
+.parallax-item, .parallax-images *, {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translatez(0);
+  transform: translatez(0);
+}
+
+.parallax-item .sqs-gallery-container * {
+    -webkit-transform: none; /* fixes gallery block arrow positioning */
+}
+
+.parallax-item {
+  position: relative;
+  .scroll-arrow {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    z-index: 10;
+    height: 30px;
+    .sqs-ui-font (right);
+    text-align: center;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    &:before {
+      text-align: center;
+      -webkit-transform: rotate(90deg);
+         -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+           -o-transform: rotate(90deg);
+              transform: rotate(90deg);
+      cursor: pointer;
+    }
+    span {
+      display: none;
+      font-family: @nav-font-font-family;
+      letter-spacing: 2px;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  .scroll-arrow:hover {
+    span {
+      display: block;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.first-index-image-fullscreen .parallax-item .has-main-image .scroll-arrow,
+.index-image-height-fullscreen .parallax-item .has-main-image .scroll-arrow {
+  display: block;
+}
+
+.back-to-top-link {
+  display: none;
+}
+
+.hide-back-to-top-link{
+  &.collection-type-index .back-to-top-link{
+    display: none;
+  }
+}
+
+.collection-type-index .back-to-top-link {
+  display: block;
+  z-index: 10;
+  background-color: @contentBgColor;
+  width: 50px;
+  height: 50px;
+  // padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  top: -25px;
+  padding-top: 2px;
+}
+
+.collection-type-index .back-to-top-link a {
+  display: block;
+  font-family: @nav-font-font-family;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  color: @textColor;
+  padding-left: 2px;
+  padding-top: 4px;
+
+  .arrow {
+    .sqs-ui-font (right);
+    display: block;
+    text-align: center;
+    width: 16px;
+    margin: 0 auto 4px;
+    &:before {
+      width: auto;
+      height: auto;
+      line-height: 1;
+      font-size: 16px;
+      text-align: center;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      cursor: pointer;
+      color: @textColor;
+      display: block;
+      margin-left: -2px;
+    }
+  }
+}
+
+
