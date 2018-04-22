@@ -1,68 +1,122 @@
 {.section collection}
-
-  {.if collections.1}
-  <nav id="parallax-nav">
-    {.repeated section collections}
-      <a href="#{urlId}" id="parallax-nav-item-{urlId}"><div class="dot"><span class="nav-title">{title}</span></div></a>
-    {.end}
-  </nav>
-  {.or}
-    <!-- <div class="sqs-state-message error">There are no pages in this Index.</div> -->
-  {.end}
-
-  <div id="parallax-images">
-    {.repeated section collections}
-    <div class="image-container content-fill{.background-source-video?} has-background-video{.end}{.equal? @index 1} first{.end}" data-url-id="{urlId}" data-content-field="main-image">
-      {.background-source-video?}
-        {@|apply sqs-video-background.block}
-        <div class="image-overlay-wrapper"></div>
-      {.or}
-        {.section mainImage}
-        <img {@|image-meta} class="loading" data-load="false" />
-        <div class="image-overlay-wrapper"></div>
-        {.end}
-      {.end}
-    </div>
-    {.end}
-  </div>
-
   {.repeated section collections}
-  <div class="parallax-item" data-url-id="{urlId}">
-    <div class="title-desc-wrapper over-image {.background-source-video?} has-main-image has-background-video{.or}{.section mainImage} has-main-image{.or} no-main-image{.end}{.end}{.equal? @index 1} first{.end}" {.section mainImage}data-color-suggested="#{colorData.suggestedBgColor}"{.end}>
 
-      {.background-source-video?}
-        <div class="title-desc-image content-fill" data-content-field="main-image">
-          {@|apply sqs-video-background.block}
-          <div class="image-overlay-wrapper"></div>
-        </div>
-      {.or}
-        {.section mainImage}
-        <div class="title-desc-image content-fill" data-content-field="main-image">
-          <img {@|image-meta} data-load="false"/>
-          <div class="image-overlay-wrapper"></div>
-        </div>
-        {.end}
-      {.end}
+    {.equal? typeName "gallery"}
 
-      <div class="title-desc-inner" data-collection-id="{id}" data-edit-main-image="Background">
-        <div class="page-title-wrapper"><h1 class="page-title" data-content-field="title">{title}</h1></div>
-        <br> <!-- this keeps the inline-blocks from collapsing -->
-        <div class="page-desc" data-content-field="description">{.section description}{@}{.end}</div>
-      </div>
-    {.equal? @index 1}<div class="scroll-arrow"><span>SCROLL DOWN</span></div>{.end}
-    </div>
-    <div class="content{.section mainImage} has-main-image{.end}{.section mainContent} has-content{.end}">
-    	<div class="content-inner{.section mainContent} has-content{.end}" data-content-field="main-content">
-        <div class="title-desc-wrapper">
-          <div class="title-desc-inner" data-collection-id="{id}">
-            <div class="page-title-wrapper"><h1 class="page-title">{title}</h1></div>
-            <br> <!-- this keeps the inline-blocks from collapsing -->
-            <div class="page-desc" data-content-field="description">{.section description}{@}{.end}</div>
+      <section id="{urlId}" class="Index-gallery" data-controller="IndexGallery" data-collection-id="{id}">
+        <div class="Index-gallery-wrapper">
+          <button aria-label="Gallery Left" class="Index-gallery-control Index-gallery-control--left">
+            <svg focusable="false" class="Icon Icon--caretLarge--left" viewBox="0 0 23 48">
+              <use xlink:href="/assets/ui-icons.svg#caret-left-icon--large"></use>
+            </svg>
+            <svg focusable="false" class="Icon Icon--caretSmall--left" viewBox="0 0 9 16">
+              <use xlink:href="/assets/ui-icons.svg#caret-left-icon--small"></use>
+            </svg>
+          </button>
+          <button aria-label="Gallery Right" class="Index-gallery-control Index-gallery-control--right">
+            <svg focusable="false" class="Icon Icon--caretLarge--right" viewBox="0 0 23 48">
+              <use xlink:href="/assets/ui-icons.svg#caret-right-icon--large"></use>
+            </svg>
+            <svg focusable="false" class="Icon Icon--caretSmall--left" viewBox="0 0 9 16">
+              <use xlink:href="/assets/ui-icons.svg#caret-right-icon--small"></use>
+            </svg>
+          </button>
+          {.section items}
+            <div class="Index-gallery-indicators">
+              {.repeated section @}<button class="Index-gallery-indicators-item"><span class="Index-gallery-indicators-item-inner"></span></button>{.end}
+            </div>
+          {.end}
+          {.repeated section items}
+
+            <article class="Index-gallery-item"{.video?} data-controller="IndexGalleryVideo"{.end}>
+
+              <div class="Index-gallery-item-inner">
+
+                {.if title || body}
+                  <div class="Index-gallery-item-content{.if title && body} Index-gallery-item-content--has-title-and-body{.end}">
+                    {.section title}<h2 class="Index-gallery-item-content-heading">{@}</h2>{.end}
+                    {.section body}<div class="Index-gallery-item-content-body">{@}</div>{.end}
+                    {.section clickthroughUrl}<a href="{@}" class="Index-gallery-item-content-link"></a>{.end}
+                    {.video?}<a href="#" class="Index-gallery-item-content-link"></a>{.end}
+                  </div>
+                {.end}
+
+                {.section clickthroughUrl}
+                  <a href="{@}" class="Index-gallery-item-image">
+                {.or}
+                  {.video?}
+                    <a href="#" class="Index-gallery-item-image">
+                  {.or}
+                    <figure class="Index-gallery-item-image">
+                  {.end}
+                {.end}
+                  <img {@|image-meta} data-load="false" />
+                {.section clickthroughUrl}
+                  </a>
+                {.or}
+                  {.video?}
+                    </a>
+                  {.or}
+                    </figure>
+                  {.end}
+                {.end}
+
+                {.video?}
+                  {@|video}
+                {.end}
+
+              </div>
+
+            </article>
+
+          {.end}
+        </div>
+      </section>
+
+    {.or}
+
+      <section id="{urlId}" class="Index-page{.section mainImage} Index-page--has-image{.or}{.background-source-video?} Index-page--has-image{.end}{.end}" {.section mainImage} data-parallax-original-element{.or}{.background-source-video?} data-parallax-original-element{.end}{.end} data-collection-id="{id}" data-parallax-id="{id}" data-edit-main-image="Background">
+        {.equal? @index 1}
+          <div class="Index-page-scroll-indicator hidden" data-controller="ScrollIndicator">
+            <div class="Index-page-scroll-indicator-text">{localizedStrings.scroll}</div>
+            <svg focusable="false" class="Index-page-scroll-indicator-arrow Icon Icon--caretLarge--down" viewBox="0 0 48 23">
+              <use xlink:href="/assets/ui-icons.svg#caret-down-large-icon"></use>
+            </svg>
+            <div class="Index-page-scroll-indicator-line"></div>
           </div>
+        {.end}
+        <div class="Index-page-content {.section mainImage} sqs-alternate-block-style-container{.or}{.background-source-video?} sqs-alternate-block-style-container{.end}{.end}">
+          {mainContent}
         </div>
-	      {mainContent}
-	     </div>
-    </div>
-  </div>
+        {.background-source-video?}
+          <figure class="Index-page-image" data-parallax-image-wrapper>
+            {@|apply background-media.block}
+          </figure>
+        {.or}
+          {.section mainImage}
+            <figure class="Index-page-image" data-parallax-image-wrapper>
+              {@|apply background-media.block}
+            </figure>
+          {.end}
+        {.end}
+      </section>
+
+    {.end}
+
   {.end}
+
+  {.section collections}
+    <nav class="Index-nav">
+      <div class="Index-nav-inner">
+        {.repeated section @}
+          <a href="#{urlId}" class="Index-nav-item{.equal? @index 1} active{.end}">
+            <div class="Index-nav-indicator"></div>
+            <div class="Index-nav-text"><span>{title}</span></div>
+          </a>
+        {.end}
+      </div>
+    </nav>
+  {.end}
+
+
 {.end}

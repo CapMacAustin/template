@@ -1,0 +1,106 @@
+<div class="Mobile" data-nc-base="mobile-bar" data-controller="AncillaryLayout">
+  <div class="Mobile-bar Mobile-bar--top" data-nc-group="top" data-controller="MobileOffset">
+
+    <div data-nc-container="top-left">
+      <a href="/" class="Mobile-bar-branding" data-nc-element="branding" data-content-field="site-title" aria-label="{siteTitle}">
+        {.section website}
+          {.section logoImageUrl}
+            <svg height="45px" width="80px" viewBox="60 60 130 130" aria-labelledby="logo_title">
+              <title id="logo_title">{siteTitle}</title>
+              <g>
+                <g stroke="none" fill="#fff">
+                  <path d="M218 62.3c-2 .1-6.8.7-7.8 1-.7.2-.7 1 .1 4.1.8 3 .9 3 4.2 2 1.7-.6 3-.9 7.3-1.6l1-.1V62h-1.3l-3.4.2zm8.5 2.6v2.5h3.6c3.9 0 7-.5 8.2-1.2 1-.7 1-2.3-.1-3-.8-.5-1.9-.7-6.3-.7l-5.4-.1v2.5zM201.7 66c-3.3 1.6-8 5.9-8 7.3 0 .6.8 1.2 3.3 3a23 23 0 0 0 3.9 2.4c.5.1.8-.1 1.3-1 .3-.7 1.7-2.3 3-3.5 1.4-1.3 2.4-2.5 2.4-2.9 0-.3-.1-1.3-.4-2.2l-.9-3c-.4-1.9-1-1.9-4.6 0zM191 78.2a105.4 105.4 0 0 0-3.8 11.3 47.9 47.9 0 0 0 11 4.6c.6 0 .8-.6 1-5.7l.4-4.8c.1-1.2 0-1.2-3.5-3.8a26.4 26.4 0 0 0-4.2-2.5c-.2 0-.6.4-1 1zm-137.3 7l-3.8 3.2c-5.6 4.5-9.7 10-10 13.5a65.6 65.6 0 0 1-19 18.7A12 12 0 0 1 16 122c-4 .3-5 1-5 2.8 0 1.3 1.9 3 5.2 4.6 9.2 4.3 25.4 5.4 41 2.8 3.6-.6 11-2.2 12.3-2.8.4 0 .7.3 1 1.6 2 6.3 7 13.5 12.6 18.7a88.6 88.6 0 0 0 35.2 16.8l1.9.2-.3-2a94.5 94.5 0 0 1-.8-11v-3.2l-4.2-.2c-16.6-.7-29-7.8-35-20.2a43.9 43.9 0 0 1-4.4-21.5l.1-4.7-5.7.2c-3.6 0-5.7 0-5.7-.2l1.3-3.2a40.6 40.6 0 0 0 3.3-10.4c0-1.2 0-1.3-.8-1.3-.5 0-1.2.5-2.2 1.5-1.2 1.4-2.2 2-7.5 4.3a69.4 69.4 0 0 1-6.2 2.6l1.2-3 2.3-5.7c1.8-5.1 1-6.5-2-3.4z"/>
+                  <path d="M115.6 86.2a20.5 20.5 0 0 0-3.4.5 86.7 86.7 0 0 1 .1 23c-.5 3-2.2 8.6-2.8 9.6-.2.3-.3-.3-.1-2 .8-8.3-.3-22-2.4-28.9-.3-.8-1.7-.6-6.4 1a58 58 0 0 0-20.4 11.8l-2.9 2.7.2 5.1A37.2 37.2 0 0 0 88 135.5a32.5 32.5 0 0 0 10 7 66.2 66.2 0 0 0 36.1 4c11.6-1.4 22.4-6 28.9-12.1 1.7-1.6 2-2.4 2.9-5.2a45.8 45.8 0 0 0-.5-17.4l3 .7c2.6.7 8.4 1.8 9.8 1.8.7 0 .3-1.7-1.7-8l-2-6.4h-1.6c-5-.3-9.1-1.5-15.5-4.4-2.4-1.1-4.5-2-4.9-2-.4 0-.7.4-1 2a111 111 0 0 1-5.1 15.2 59.4 59.4 0 0 1-15.4 21.6l-2 1.5 1.8-2.3c2.5-3.4 5.6-8.7 7.5-13 3.5-7.8 7-20.7 7.3-26.3V90l-3.3-1c-4.8-1.6-10-2.6-10.4-2-.1.2-.3 1.4-.3 2.8a61.7 61.7 0 0 1-9.3 32.6c-2 3-2.5 3.4-1.6 1.4a75.4 75.4 0 0 0 4.5-17.3c.6-3.6 1-17.5.7-19.4l-.2-1.2h-3.4l-6.7.3zm69.6 7.6l-1.7 2.1a9.8 9.8 0 0 1-3.4 2.6c-1.4.5-1.9.9-1.9 1.4 0 .4 1 3.7 2.2 7.4 2.6 7.6 2.2 7.2 6 6a16 16 0 0 0 9.7-8.7c1.4-2.8 2.3-6 1.8-6.5a122.4 122.4 0 0 0-12.2-4.6c-.3 0-.5.1-.5.3z"/>
+                  <path d="M163.6 138.7a58.4 58.4 0 0 1-19.5 9 97.2 97.2 0 0 1-17.2 2.5l-4.2.2v3a60 60 0 0 0 5.6 25.2c2.2 4.6 7 10.4 8.6 10.4.3 0 .4-.3.2-1l-.4-3-.2-2 1.6 1.1c3.3 2.4 6.8 3.9 6.8 3a15.5 15.5 0 0 0-1-2.5 15.5 15.5 0 0 1-1.2-3.7l-.3-1.6 1.2.7c2.3 1.4 7.5 2.7 7.5 1.8 0-.2-.7-1.3-1.6-2.5-2.3-2.9-5.7-8.2-7.3-11.3-3-6-3-9.5 0-10.7l3.6-.9c3.4-.6 8.7-2.3 12-3.9a15.3 15.3 0 0 0 7.3-7 9 9 0 0 0 1-5c0-3.4-.2-3.6-2.5-1.8z"/>
+                  <path d="M172 146.7a37.8 37.8 0 0 1-8.6 7 39.9 39.9 0 0 1-16.2 5.2c-1.7.2-3.3.5-3.5.7-1.3 1-.7 4.2 1.5 7.7l1.1 1.9h3.3c4.3 0 11.3-.6 15.4-1.2 4-.6 8.5-2.1 11.5-3.9 3.6-2 7.8-6.8 7-7.7l-3.7 1a40 40 0 0 1-3.9 1.2c-.2 0 .4-1 1.3-2 3-4 4.9-7.6 3.7-7.6-.2 0-1.9 1-3.7 2.3a37 37 0 0 1-4.4 2.7c-.8.3-1 .2-.7-.3 1-2.6 2.2-6.5 2.2-7.5 0-1.6-.7-1.5-2.3.5z"/>
+                </g>
+              </g>
+            </svg>
+          {.or}
+            {.section siteTitle}{@}{.end}
+          {.end}
+        {.end}
+      </a>
+    </div>
+    <div data-nc-container="top-center"></div>
+    <div data-nc-container="top-right"></div>
+  </div>
+  <div class="Mobile-bar Mobile-bar--bottom" data-nc-group="bottom" data-controller="MobileOffset">
+    <div data-nc-container="bottom-left">
+      <button aria-label="Menu" class="Mobile-bar-menu" data-nc-element="menu-icon" data-controller-overlay="menu" data-controller="MobileOverlayToggle">        
+        <svg focusable="false" class="Icon Icon--hamburger" viewBox="0 0 24 18">
+          <use xlink:href="/assets/ui-icons.svg#hamburger-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#hamburger-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--hotdog" viewBox="0 0 24 14">
+          <use xlink:href="/assets/ui-icons.svg#hotdog-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#hotdog-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--plus" viewBox="0 0 20 20">
+          <use xlink:href="/assets/ui-icons.svg#plus-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#plus-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--dots-horizontal" viewBox="0 0 25 7">
+          <use xlink:href="/assets/ui-icons.svg#dots-horizontal-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#dots-horizontal-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--dots-vertical" viewBox="0 0 7 25">
+          <use xlink:href="/assets/ui-icons.svg#dots-vertical-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#dots-vertical-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--squares-horizontal" viewBox="0 0 25 7">
+          <use xlink:href="/assets/ui-icons.svg#squares-horizontal-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#squares-horizontal-icon--odd" class="use--odd"></use>
+        </svg>
+        <svg focusable="false" class="Icon Icon--squares-vertical" viewBox="0 0 7 25">
+          <use xlink:href="/assets/ui-icons.svg#squares-vertical-icon--even" class="use--even"></use>
+          <use xlink:href="/assets/ui-icons.svg#squares-vertical-icon--odd" class="use--odd"></use>
+        </svg>
+      </button>
+    </div>
+    <div data-nc-container="bottom-center">
+      {@|apply cart.block}
+    </div>
+    <div data-nc-container="bottom-right">
+      {.if websiteSettings.userAccountsSettings.loginAllowed}
+        <div class="Mobile-bar-account" data-nc-element="account" data-controller="UserAccountLink">
+          <button class="user-accounts-text-link">
+            <span class="unauth">{localizedStrings.signIn}</span>
+            <span class="auth">{localizedStrings.myAccount}</span>
+          </button>
+          <div class="user-accounts-icon">
+            {@|apply user-account-icon.block}
+          </div>
+        </div>
+      {.end}
+      <a aria-label="Search" href="/search" class="Mobile-bar-search" data-nc-element="search-icon">
+        <svg focusable="false" class="Icon Icon--search" viewBox="0 0 20 20">
+          <use xlink:href="/assets/ui-icons.svg#search-icon"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="Mobile-overlay">
+    <div class="Mobile-overlay-menu" data-controller="MobileOverlayFolders">
+      <div class="Mobile-overlay-menu-main">
+        <nav class="Mobile-overlay-nav Mobile-overlay-nav--primary" data-content-field="navigation">
+          <squarespace:navigation navigationId="mainNavigation" template="mobile-nav" />
+        </nav>
+        <nav class="Mobile-overlay-nav Mobile-overlay-nav--secondary" data-content-field="navigation">
+          <squarespace:navigation navigationId="secondaryNavigation" template="mobile-nav" />
+        </nav>
+      </div>
+      <div class="Mobile-overlay-folders" data-content-field="navigation">
+        <squarespace:navigation navigationId="mainNavigation" template="mobile-nav-folder" />
+        <squarespace:navigation navigationId="secondaryNavigation" template="mobile-nav-folder" />
+      </div>
+    </div>
+    <button aria-label="Close" class="Mobile-overlay-close" data-controller="MobileOverlayToggle">
+      <svg focusable="false" class="Icon Icon--close" viewBox="0 0 16 16">
+        <use xlink:href="/assets/ui-icons.svg#close-icon"></use>
+      </svg>
+    </button>
+    <div class="Mobile-overlay-back" data-controller="MobileOverlayToggle"></div>
+  </div>
+</div>

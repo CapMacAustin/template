@@ -1,0 +1,6 @@
+// removed from https://capmacusersgroup.squarespace.com/config/settings/advanced/injection
+// HEADER section in old site
+
+<squarespace:script src="plugin.js" combo="true" />
+<squarespace:script src="site.js" combo="true" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
